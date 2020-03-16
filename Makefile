@@ -1,5 +1,6 @@
 CONTRACTS_PREFIX = ../eosio.contracts/contracts
-CLEOS = $(HOME)/bin/cleos-jungle.sh
+#CLEOS = $(HOME)/bin/cleos-jungle.sh
+CLEOS = $(HOME)/bin/cleos.sh
 CONTRACT = exodussignup
 DEPS = $(CONTRACT).hpp ramcost.hpp
 SOURCES = $(CONTRACT).cpp ramcost.cpp
