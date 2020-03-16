@@ -1,5 +1,7 @@
 //
 // Created by Hongbo Tang on 2018/7/5.
+// Modified by Ferenc Kiraly on 2018/10/15
+// Rewritten by Ferenc Kiraly on 2020/03/13
 //
 
 #include <eosio/eosio.hpp>
