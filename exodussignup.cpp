@@ -9,12 +9,12 @@
 
 [[eosio::action]]
 void exodussignup::transfer(name from, name to, asset quantity, string memo) {
-    symbol core_symbol = eosiosystem::system_contract::get_core_symbol();
-
-    if (from == _self || to != _self || quantity.symbol != core_symbol) {
+    if (from == _self || to != _self) {
         return;
     }
 
+    symbol core_symbol = eosiosystem::system_contract::get_core_symbol();
+    check(quantity.symbol == core_symbol, "Only CORE symbo accepted");
     check(quantity.is_valid(), "Invalid token transfer");
     check(quantity.amount > 0, "Quantity must be positive");
 
