@@ -2,7 +2,7 @@
 // Written by Ferenc Kiraly on 2020/03/13
 //
 
-#include <eosio.system/eosio.system.hpp>
+#include "ramcost.hpp"
 
 namespace eosiosystem {
 
