@@ -6,11 +6,11 @@ Smart contract for creating EOS accounts for users of Exodus. EOS can be sent to
 
 1. Install a fresh Ubuntu 18.04 LTS
 
-2. Install `eosio v2.0.3` from https://github.com/EOSIO/eos/releases
+2. Install `eosio v2.0.7` from https://github.com/EOSIO/eos/releases
 
 3. Install `eosio.cdt v1.7.0` from https://github.com/EOSIO/eosio.cdt/releases
 
-4. Create `contracts` directory somewhere
+4. Create `contracts` directory somewherei and `cd contracts`
 
 5. Download `eosio.contracts v1.9.0` from  https://github.com/EOSIO/eosio.contracts/releases
 
