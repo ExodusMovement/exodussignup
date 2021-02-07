@@ -19,7 +19,11 @@ deploy: $(WASM)
 	$(CLEOS) set contract $(CONTRACT) ../$(CONTRACT)
 
 test:
-	$(CLEOS) transfer ferijungle42 $(CONTRACT) "1.0000 EOS" "barasherfood-EOS5MqQPx2BzerwwKkdXkihzTZREcteMxzgo5EBQGA5RzdBZjq4NQ"
+	$(CLEOS) transfer ferijungle42 $(CONTRACT) "1.0000 EOS" "barasherooo5-EOS5MqQPx2BzerwwKkdXkihzTZREcteMxzgo5EBQGA5RzdBZjq4NQ"
+
+test-invalid-receiver:
+	$(CLEOS) push action $(CONTRACT) transfer "{\"from\": \"$(CONTRACT)\", \"to\": \"ferijungle42\", \"quantity\": \"2.0000 EOS\", \"memo\": \"A fake\"}" -p ferijungle42@active 
+
 
 unlock:
 	$(CLEOS) wallet unlock
