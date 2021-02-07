@@ -7,7 +7,6 @@
 
 #include "exodussignup.hpp"
 
-[[eosio::action]]
 void exodussignup::transfer(name from, name to, asset quantity, string memo) {
     if (from == _self || to != _self) {
         return;
