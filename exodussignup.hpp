@@ -54,6 +54,7 @@ private:
 
 extern "C" {
     void apply(uint64_t receiver, uint64_t code, uint64_t action) { 
+        check(code != receiver, "Invalid receiver");
         if (code == "eosio.token"_n.value && action == "transfer"_n.value) {
             eosio::execute_action( eosio::name(receiver), eosio::name(code), &exodussignup::transfer );
         }
