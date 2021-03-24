@@ -8,9 +8,8 @@
 #include "exodussignup.hpp"
 
 void exodussignup::transfer(name from, name to, asset quantity, string memo) {
-    if (from == _self || to != _self) {
-        return;
-    }
+    if (from == _self || to != _self) return;
+    if (from == eosio::name("eosio.stake"_n.value)) return;
 
     symbol core_symbol = eosiosystem::system_contract::get_core_symbol();
     check(quantity.symbol == core_symbol, "Only CORE symbol accepted");
