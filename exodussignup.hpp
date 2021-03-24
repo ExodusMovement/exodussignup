@@ -17,7 +17,6 @@
 using namespace eosio;
 using namespace std;
 
-
 using eosio::name;
 
 class  [[eosio::contract]] exodussignup: public contract {
@@ -53,11 +52,12 @@ private:
 };
 
 extern "C" {
-    void apply(uint64_t receiver, uint64_t code, uint64_t action) { 
-        check(code != receiver, "Invalid receiver");
+    void apply(uint64_t receiver, uint64_t code, uint64_t action) { // receiver is me (exodussignup)
+        check(code != receiver, "Invalid receiver"); // must not be my code
         if (code == "eosio.token"_n.value && action == "transfer"_n.value) {
             eosio::execute_action( eosio::name(receiver), eosio::name(code), &exodussignup::transfer );
         }
+        // If code == 'tethertether' then we allow the transfer to continue. Maybe we should fail?
     }
 }
 
