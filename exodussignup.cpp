@@ -53,10 +53,10 @@ void exodussignup::transfer(name from, name to, asset quantity, string memo) {
     checksum160 check_pubkey = ripemd160(reinterpret_cast<const char *>(pubkey_data.data()), 33);
     check(memcmp(check_pubkey.extract_as_byte_array().data(), &vch.end()[-4], 4) == 0, "Invalid public key");
 
-    const int64_t max_ram_cost = 10000; // Maximum RAM cost
+    const int64_t max_ram_cost = 100000; // Maximum RAM cost
     const int64_t net_stake = 0;        // Amount to stake for NET [1/10 mEOS]
     const int64_t cpu_stake = 0;        // Amount to stake for CPU [1/10 mEOS]
-    const uint32_t bytes = 6144;        // Number of bytes of RAM to buy for the created account
+    const uint32_t bytes = 4992;        // Number of bytes of RAM to buy for the created account
     const uint32_t bytes_self = 240;    // Number of bytes of RAM to buy for exodussignup to reimburse for lost RAM and make exodussignup self-sufficient
 
     asset buy_ram_total = eosiosystem::ramcost(bytes + bytes_self, core_symbol);
